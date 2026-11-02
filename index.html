@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>xCenbar Learning · Welcome to study</title>
+<meta name="description" content="xCenbar Learning — រៀន English, ភាសាចិន, Code/IT, UX/UI, Graphic Design និង Video Editing ជាភាសាខ្មែរ">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjM2ZkMGZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzRjZjBiOCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTgiIGZpbGw9IiMwYjE0MjYiLz4KICA8cmVjdCB4PSIxLjUiIHk9IjEuNSIgd2lkdGg9IjYxIiBoZWlnaHQ9IjYxIiByeD0iMTYuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utb3BhY2l0eT0iLjUiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxwYXRoIGQ9Ik0xOSAxOSBMNDUgNDUgTTQ1IDE5IEwxOSA0NSIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iMTgiIHI9IjYuNSIgZmlsbD0iI2ZmYjU0NyIvPgo8L3N2Zz4K">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Kantumruy+Pro:wght@400;500;600;700&family=Moul&family=Noto+Sans+SC:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="spk" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></g></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="M10 9v6l5-3z" fill="currentColor"/></g></symbol>
+</svg>
+
+<!-- ============ AUTH ============ -->
+<div class="wrap" id="auth">
+  <div class="auth">
+    <section class="hero">
+      <div class="brand"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjM2ZkMGZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzRjZjBiOCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTgiIGZpbGw9IiMwYjE0MjYiLz4KICA8cmVjdCB4PSIxLjUiIHk9IjEuNSIgd2lkdGg9IjYxIiBoZWlnaHQ9IjYxIiByeD0iMTYuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utb3BhY2l0eT0iLjUiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxwYXRoIGQ9Ik0xOSAxOSBMNDUgNDUgTTQ1IDE5IEwxOSA0NSIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iMTgiIHI9IjYuNSIgZmlsbD0iI2ZmYjU0NyIvPgo8L3N2Zz4K" alt=""><div><span class="x">x</span>Cenbar<small>Learning</small></div></div>
+      <h1>Welcome to <span>study</span></h1>
+      <p class="kh-sub">រៀនភាសា និងជំនាញថ្មីៗ ជាភាសាខ្មែរ រាល់ថ្ងៃ</p>
+      <div class="subjects-mini"><span>English A1–C2</span><span>中文 HSK 1–6</span><span>Code / IT</span><span>UX/UI Design</span><span>Graphic Design</span><span>Video Editing</span></div>
+      <div class="clock glass">
+        <span class="lbl">ម៉ោងកម្ពុជា</span>
+        <span class="t" data-clock="time"></span>
+        <span class="d" data-clock="date"></span>
+      </div>
+    </section>
+
+    <section class="panel glass">
+      <div class="tabs2" role="tablist">
+        <button role="tab" id="t-login" aria-selected="true">ចូលគណនី</button>
+        <button role="tab" id="t-signup" aria-selected="false">បង្កើតគណនី</button>
+      </div>
+
+      <form id="f-login" novalidate>
+        <label>អ៊ីមែល<input type="email" id="li-email" autocomplete="username" placeholder="you@example.com"></label>
+        <label>ពាក្យសម្ងាត់<div class="inp"><input type="password" id="li-pass" autocomplete="current-password"><button type="button" class="eye" data-eye="li-pass">បង្ហាញ</button></div></label>
+        <div class="err" id="li-err"></div>
+        <button class="btn primary" type="submit">ចូលរៀន</button>
+        <button class="btn ghost sm" type="button" id="demo">សាកល្បងជាភ្ញៀវ (មិនចាំបាច់បង្កើតគណនី)</button>
+      </form>
+
+      <form id="f-signup" novalidate hidden>
+        <label>ឈ្មោះ<input type="text" id="su-name" autocomplete="name" placeholder="ឧ. សុខ ដារ៉ា"></label>
+        <label>អ៊ីមែល<input type="email" id="su-email" autocomplete="username" placeholder="you@example.com"></label>
+        <label>ពាក្យសម្ងាត់ (យ៉ាងតិច ៦ តួ)<div class="inp"><input type="password" id="su-pass" autocomplete="new-password"><button type="button" class="eye" data-eye="su-pass">បង្ហាញ</button></div></label>
+        <label>បញ្ជាក់ពាក្យសម្ងាត់<input type="password" id="su-pass2" autocomplete="new-password"></label>
+        <div class="err" id="su-err"></div>
+        <button class="btn primary" type="submit">បង្កើតគណនី</button>
+      </form>
+      <p class="note" style="margin-top:14px">គណនី និងវឌ្ឍនភាពរក្សាទុកនៅលើឧបករណ៍នេះ។</p>
+    </section>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div class="wrap" id="app" hidden>
+  <header class="topbar">
+    <div class="brand"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjM2ZkMGZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzRjZjBiOCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTgiIGZpbGw9IiMwYjE0MjYiLz4KICA8cmVjdCB4PSIxLjUiIHk9IjEuNSIgd2lkdGg9IjYxIiBoZWlnaHQ9IjYxIiByeD0iMTYuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utb3BhY2l0eT0iLjUiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxwYXRoIGQ9Ik0xOSAxOSBMNDUgNDUgTTQ1IDE5IEwxOSA0NSIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iMTgiIHI9IjYuNSIgZmlsbD0iI2ZmYjU0NyIvPgo8L3N2Zz4K" alt=""><div><span class="x">x</span>Cenbar<small>Learning</small></div></div>
+    <div class="right">
+      <div class="miniclock"><b data-clock="time"></b><br><span data-clock="date"></span></div>
+      <div class="avatar" id="avatar" title=""></div>
+      <button class="btn sm" id="logout">ចាកចេញ</button>
+    </div>
+  </header>
+
+  <nav class="subnav glass" id="subnav">
+    <button data-v="home">ផ្ទាំងដើម</button>
+    <button data-v="english">English</button>
+    <button data-v="chinese">ភាសាចិន</button>
+    <button data-v="code">Code / IT</button>
+    <button data-v="uxui">UX/UI Design</button>
+    <button data-v="graphic">Graphic Design</button>
+    <button data-v="video">Video Editing</button>
+  </nav>
+
+  <main>
+    <section class="view" id="v-home"></section>
+    <section class="view" id="v-english" hidden></section>
+    <section class="view" id="v-chinese" hidden></section>
+    <section class="view" id="v-code" hidden></section>
+    <section class="view" id="v-uxui" hidden></section>
+    <section class="view" id="v-graphic" hidden></section>
+    <section class="view" id="v-video" hidden></section>
+  </main>
+  <footer>© xCenbar Learning · រៀនរាល់ថ្ងៃ ដើម្បីអនាគត</footer>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="js/bg.js"></script>
+<script src="js/data-english.js"></script>
+<script src="js/data-grammar-forms.js"></script>
+<script src="js/data-wordforms.js"></script>
+<script src="js/data-reading-long.js"></script>
+  <script src="js/data-conversations.js"></script>
+  <script src="js/data-books.js"></script>
+<script src="js/data-chinese.js"></script>
+<script src="js/data-code.js"></script>
+<script src="js/data-design.js"></script>
+  <script src="js/data-ux.js"></script>
+  <script src="js/ux-wire.js"></script>
+  <script src="js/ux-video.js"></script>
+  <script src="js/ux-web.js"></script>
+  <script src="js/ux-tools.js"></script>
+<script src="js/data-video.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
